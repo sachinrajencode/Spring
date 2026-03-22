@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+<meta charset="UTF-8">
+<title>AddstudentForm</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Brand / Logo -->
+    <a class="navbar-brand" href="#">Student Management System</a>
+
+    <!-- Toggler button for mobile -->
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#collapsibleNavbar" 
+            aria-controls="collapsibleNavbar" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto = right align -->
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/students}">Student Management</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+   <!-- <h1> Student Registration Form</h1> -->
+
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6 container justify-container-center card">
+ <div class="text-center" style="font-size: 30px;">Create New Student</div>
+ <div class="card-body"></div>
+
+   <form th:action="@{/students}" th:objects="${student}" method="post">
+      <div class="form-group">
+      
+         <label>Student First Name</label>
+      
+      <input type="text" name="firstName" class="form-control" placeholder="Enter First Name"/>
+      
+      </div>
+      
+      <div class="form-group">
+      
+         <label>Student Last Name</label>
+      
+      <input type="text" name="lastName" class="form-control" placeholder="Enter Last Name"/>
+      
+      </div>
+      
+      <div class="form-group">
+      
+         <label>Student Email</label>
+      
+      <input type="text" name="email" class="form-control" placeholder="Enter Email"/>
+      
+      </div>
+      
+      <div class="box-footer">
+      
+        <button type="submit" class="btn btn-primary ">Submit</button>
+      
+      </div>
+   
+   </form>
+   </div>
+   </div>
+    
+</body>
+</html>
